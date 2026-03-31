@@ -1,29 +1,8 @@
 "use client";
 
-import { Star } from "lucide-react";
-
 export default function OverviewTab() {
   return (
     <div className="w-full">
-      {/* Título */}
-      <h1 className="mb-4 text-3xl font-bold text-[#344054] md:text-4xl">
-        Japan Rundreise 2 Wochen: Tradition und Moderne
-      </h1>
-
-      {/* Rating */}
-      <div className="mb-8 flex items-center gap-2">
-        <div className="flex">
-          {[1, 2, 3, 4].map((star) => (
-            <Star
-              key={star}
-              className="h-5 w-5 fill-[#FDB022] text-[#FDB022]"
-            />
-          ))}
-          <Star className="h-5 w-5 fill-[#FDB022]/50 text-[#FDB022]" />
-        </div>
-        <span className="text-sm text-[#667085]">308 Bewertungen</span>
-      </div>
-
       {/* Highlights + Japaventura-Erlebnis - Side by side */}
       <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Sección Highlights der Reise */}
