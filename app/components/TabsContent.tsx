@@ -37,9 +37,6 @@ function Sidebar() {
             ))}
             <Star className="h-4 w-4 fill-[#FDB022]/50 text-[#FDB022]" />
           </div>
-          <span className="ml-2 rounded bg-[#FEF3F2] px-2 py-0.5 text-xs text-[#B42318]">
-            Explorer
-          </span>
         </div>
         <div className="mb-6 text-sm text-[#667085]">Bewertungen</div>
         <div className="mb-2 text-sm text-[#667085]">Preis</div>
