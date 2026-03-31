@@ -5,12 +5,7 @@ import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
 import OverviewTab from "./tabs/OverviewTab";
 import KarteTab from "./tabs/KarteTab";
-import ReiseleiterTab from "./tabs/ReiseleiterTab";
-import TerminePreiseTab from "./tabs/TerminePreiseTab";
-import InklusiveTab from "./tabs/InklusiveTab";
 import BewertungenTab from "./tabs/BewertungenTab";
-import ReisetagebuchTab from "./tabs/ReisetagebuchTab";
-import WissenswertesTab from "./tabs/WissenswertesTab";
 import Itinerary from "../sections/Itinerary";
 
 interface Tab {
@@ -22,12 +17,7 @@ const tabs: Tab[] = [
   { id: "ubersicht", label: "Übersicht" },
   { id: "karte", label: "Karte" },
   { id: "reiseverlauf", label: "Reiseverlauf" },
-  { id: "reiseleiter", label: "Reiseleiter" },
-  { id: "termine-preise", label: "Termine & Preise" },
-  { id: "inklusive", label: "Inklusive" },
   { id: "bewertungen", label: "Bewertungen" },
-  { id: "reisetagebuch", label: "Reisetagebuch" },
-  { id: "wissenswertes", label: "Wissenswertes" },
 ];
 
 // Sidebar component
@@ -131,34 +121,9 @@ export default function TabsContent() {
               <Itinerary />
             </section>
 
-            {/* Reiseleiter Section */}
-            <section id="reiseleiter">
-              <ReiseleiterTab />
-            </section>
-
-            {/* Termine & Preise Section */}
-            <section id="termine-preise">
-              <TerminePreiseTab />
-            </section>
-
-            {/* Inklusive Section */}
-            <section id="inklusive">
-              <InklusiveTab />
-            </section>
-
             {/* Bewertungen Section */}
             <section id="bewertungen">
               <BewertungenTab />
-            </section>
-
-            {/* Reisetagebuch Section */}
-            <section id="reisetagebuch">
-              <ReisetagebuchTab />
-            </section>
-
-            {/* Wissenswertes Section */}
-            <section id="wissenswertes">
-              <WissenswertesTab />
             </section>
           </div>
 

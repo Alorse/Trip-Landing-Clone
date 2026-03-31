@@ -12,12 +12,7 @@ const tabs: Tab[] = [
   { id: "ubersicht", label: "Übersicht" },
   { id: "karte", label: "Karte" },
   { id: "reiseverlauf", label: "Reiseverlauf" },
-  { id: "reiseleiter", label: "Reiseleiter" },
-  { id: "termine-preise", label: "Termine & Preise" },
-  { id: "inklusive", label: "Inklusive" },
   { id: "bewertungen", label: "Bewertungen" },
-  { id: "reisetagebuch", label: "Reisetagebuch" },
-  { id: "wissenswertes", label: "Wissenswertes" },
 ];
 
 interface TabsNavProps {
@@ -26,7 +21,7 @@ interface TabsNavProps {
 }
 
 export function TabsNav({
-  defaultTab = "termine-preise",
+  defaultTab = "ubersicht",
   onTabChange,
 }: TabsNavProps) {
   const [activeTab, setActiveTab] = React.useState(defaultTab);
