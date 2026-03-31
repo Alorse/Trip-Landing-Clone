@@ -7,6 +7,7 @@ import { Star } from "lucide-react";
 import OverviewTab from "./tabs/OverviewTab";
 import KarteTab from "./tabs/KarteTab";
 import BewertungenTab from "./tabs/BewertungenTab";
+import HotelsTab from "./tabs/HotelsTab";
 import Itinerary from "../sections/Itinerary";
 
 interface Tab {
@@ -18,6 +19,7 @@ const tabs: Tab[] = [
   { id: "ubersicht", label: "Übersicht" },
   { id: "karte", label: "Karte" },
   { id: "reiseverlauf", label: "Reiseverlauf" },
+  { id: "hotels", label: "Hotels" },
   { id: "bewertungen", label: "Bewertungen" },
 ];
 
@@ -113,6 +115,11 @@ export default function TabsContent() {
             {/* Reiseverlauf Section */}
             <section id="reiseverlauf" className="w-full">
               <Itinerary />
+            </section>
+
+            {/* Hotels Section */}
+            <section id="hotels">
+              <HotelsTab />
             </section>
 
             {/* Bewertungen Section */}

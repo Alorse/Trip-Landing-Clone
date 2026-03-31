@@ -12,6 +12,7 @@ const tabs: Tab[] = [
   { id: "ubersicht", label: "Übersicht" },
   { id: "karte", label: "Karte" },
   { id: "reiseverlauf", label: "Reiseverlauf" },
+  { id: "hotels", label: "Hotels" },
   { id: "bewertungen", label: "Bewertungen" },
 ];
 
