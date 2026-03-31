@@ -73,7 +73,7 @@ export default function TabsContent() {
     // Scroll to the section
     const element = document.getElementById(tabId);
     if (element) {
-      const offset = 120; // Account for sticky header
+      const offset = 60; // Account for sticky tabbar only
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       window.scrollTo({
