@@ -1,7 +1,7 @@
 "use client";
 
 // Cache bust: v3
-import * as React from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
 import OverviewTab from "./tabs/OverviewTab";
@@ -57,7 +57,7 @@ function Sidebar() {
 }
 
 export default function TabsContent() {
-  const [activeTab, setActiveTab] = React.useState("ubersicht");
+  const [activeTab, setActiveTab] = useState("ubersicht");
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);

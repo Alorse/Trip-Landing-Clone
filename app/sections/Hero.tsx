@@ -94,9 +94,6 @@ export default function Hero() {
 
           {/* Column 4 */}
           <div className="flex flex-1 flex-col items-center justify-center px-4">
-            <div className="text-sm" style={{ color: "#667085" }}>
-              Angebot
-            </div>
             <div className="text-lg font-semibold" style={{ color: "#344054" }}>
               Günstige Hotelupgrades
             </div>
