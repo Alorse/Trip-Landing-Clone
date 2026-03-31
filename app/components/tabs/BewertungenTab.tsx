@@ -76,6 +76,7 @@ function ReviewCard({ review }: { review: Review }) {
             fill
             className="object-cover"
             sizes="48px"
+            unoptimized
           />
         </div>
         <div className="flex-1">
@@ -95,11 +96,10 @@ function ReviewCard({ review }: { review: Review }) {
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
             key={star}
-            className={`h-4 w-4 ${
-              star <= review.rating
+            className={`h-4 w-4 ${star <= review.rating
                 ? "fill-[#FDB022] text-[#FDB022]"
                 : "fill-gray-200 text-gray-200"
-            }`}
+              }`}
           />
         ))}
       </div>

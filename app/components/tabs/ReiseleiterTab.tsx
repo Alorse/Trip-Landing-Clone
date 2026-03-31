@@ -58,6 +58,7 @@ function GuideCard({ guide }: { guide: Guide }) {
               fill
               className="object-cover"
               sizes="(max-width: 768px) 40vw, 200px"
+              unoptimized
             />
           </div>
         </div>
