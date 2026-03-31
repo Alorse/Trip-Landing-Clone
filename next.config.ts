@@ -6,20 +6,17 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "storage.googleapis.com",
-        pathname: "/ventura-static-map-images/**",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "storage.googleapis.com",
-        pathname: "/media_ventura_travel/**",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "media.venturatravel.org",
+        pathname: "/**",
       },
     ],
   },
