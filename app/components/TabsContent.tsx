@@ -60,10 +60,9 @@ export default function TabsContent() {
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
-    // Scroll to the section
     const element = document.getElementById(tabId);
     if (element) {
-      const offset = 60; // Account for sticky tabbar only
+      const offset = 60;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       window.scrollTo({
@@ -101,7 +100,7 @@ export default function TabsContent() {
         </nav>
       </div>
 
-      {/* Content Area - All sections rendered, tabs scroll to them */}
+      {/* Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Main Content */}
