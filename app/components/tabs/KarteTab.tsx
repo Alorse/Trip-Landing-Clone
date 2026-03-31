@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 export default function KarteTab() {
   return (
     <div className="w-full pt-8">
@@ -9,12 +7,10 @@ export default function KarteTab() {
         Reiseroute auf der Karte
       </h2>
       <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg">
-        <Image
+        <img
           src="https://storage.googleapis.com/ventura-static-map-images/12359.png"
           alt="Karte der Japan Rundreise"
-          fill
-          className="object-cover"
-          sizes="(max-width: 1280px) 100vw, 1280px"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
       <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-4">
