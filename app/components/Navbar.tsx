@@ -27,7 +27,6 @@ export default function Navbar() {
               alt="Japaventura"
               width={180}
               height={40}
-              className="h-10"
               style={{ width: "auto", height: "auto" }}
               priority
             />

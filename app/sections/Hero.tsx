@@ -74,21 +74,31 @@ export default function Hero() {
             className="flex flex-1 flex-col items-center justify-center border-r px-4"
             style={{ borderColor: "#E4E7EC" }}
           >
-            <div className="text-sm" style={{ color: "#667085" }}>
-              Gruppengröße
-            </div>
             <div className="text-lg font-semibold" style={{ color: "#344054" }}>
               Kostenlose Stornierung
             </div>
           </div>
 
           {/* Column 3 */}
-          <div className="flex flex-1 flex-col items-center justify-center px-4">
+          <div
+            className="flex flex-1 flex-col items-center justify-center border-r px-4"
+            style={{ borderColor: "#E4E7EC" }}
+          >
             <div className="text-sm" style={{ color: "#667085" }}>
               Reiseart
             </div>
             <div className="text-lg font-semibold" style={{ color: "#344054" }}>
               Privatreise
+            </div>
+          </div>
+
+          {/* Column 4 */}
+          <div className="flex flex-1 flex-col items-center justify-center px-4">
+            <div className="text-sm" style={{ color: "#667085" }}>
+              Angebot
+            </div>
+            <div className="text-lg font-semibold" style={{ color: "#344054" }}>
+              Günstige Hotelupgrades
             </div>
           </div>
         </div>

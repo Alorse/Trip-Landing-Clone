@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+// Cache bust: v2
 import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
 import OverviewTab from "./tabs/OverviewTab";
