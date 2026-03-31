@@ -26,9 +26,6 @@ function Sidebar() {
   return (
     <div className="hidden lg:block lg:w-1/4">
       <div className="sticky top-24 rounded-lg bg-white p-6 shadow-lg">
-        <h3 className="mb-3 text-lg font-semibold text-[#344054]">
-          Japan Rundreise 2 Wochen: Tradition und Moderne
-        </h3>
         <div className="mb-4 flex items-center gap-2">
           <span className="text-2xl font-bold text-[#344054]">4,6</span>
           <div className="flex">
@@ -40,16 +37,16 @@ function Sidebar() {
             ))}
             <Star className="h-4 w-4 fill-[#FDB022]/50 text-[#FDB022]" />
           </div>
-          <span className="text-sm text-[#667085]">(308)</span>
           <span className="ml-2 rounded bg-[#FEF3F2] px-2 py-0.5 text-xs text-[#B42318]">
             Explorer
           </span>
         </div>
+        <div className="mb-6 text-sm text-[#667085]">Bewertungen</div>
         <div className="mb-2 text-sm text-[#667085]">Preis</div>
-        <div className="mb-1 text-4xl font-bold text-[#344054]">5.100 EUR</div>
+        <div className="mb-1 text-4xl font-bold text-[#344054]">3.200 EUR</div>
         <div className="mb-6 text-sm text-[#667085]">Flüge inklusive</div>
         <button className="w-full rounded-lg bg-[#D55753] px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-[#D55753]/90">
-          Reservieren
+          Termin prüfen
         </button>
       </div>
     </div>
