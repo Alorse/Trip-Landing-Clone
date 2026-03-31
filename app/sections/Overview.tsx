@@ -9,25 +9,6 @@ export default function Overview() {
         <div className="relative flex flex-col gap-8 lg:flex-row">
           {/* COLUMNA IZQUIERDA (3/4 = 75%) */}
           <div className="lg:w-3/4">
-            {/* Título */}
-            <h1 className="mb-4 text-3xl font-bold text-[#344054] md:text-4xl">
-              Japan Rundreise 2 Wochen: Tradition und Moderne
-            </h1>
-
-            {/* Rating */}
-            <div className="mb-8 flex items-center gap-2">
-              <div className="flex">
-                {[1, 2, 3, 4].map((star) => (
-                  <Star
-                    key={star}
-                    className="h-5 w-5 fill-[#FDB022] text-[#FDB022]"
-                  />
-                ))}
-                <Star className="h-5 w-5 fill-[#FDB022]/50 text-[#FDB022]" />
-              </div>
-              <span className="text-sm text-[#667085]">308 Bewertungen</span>
-            </div>
-
             {/* Sección Highlights der Reise */}
             <div className="mb-8">
               <h2 className="mb-4 text-xl font-semibold text-[#344054]">
