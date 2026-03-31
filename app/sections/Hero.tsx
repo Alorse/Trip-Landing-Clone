@@ -41,7 +41,7 @@ export default function Hero() {
             (e.currentTarget.style.backgroundColor = "#D55753")
           }
         >
-          Jetzt Platz sichern
+          Termin prüfen
         </button>
 
         {/* Badge */}
