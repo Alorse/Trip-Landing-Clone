@@ -121,29 +121,6 @@ export default function Overview() {
           {/* SIDEBAR FLOTANTE (1/4 = 25%) - Posición absoluta */}
           <div className="hidden lg:block lg:w-1/4">
             <div className="fixed right-[max(1rem,calc((100vw-80rem)/2+1rem))] top-20 w-[calc(25%-2rem)] max-w-[280px] rounded-lg bg-white p-6 shadow-lg">
-              {/* Título en card */}
-              <h3 className="mb-3 text-lg font-semibold text-[#344054]">
-                Japan Rundreise 2 Wochen: Tradition und Moderne
-              </h3>
-
-              {/* Rating en card */}
-              <div className="mb-4 flex items-center gap-2">
-                <span className="text-2xl font-bold text-[#344054]">4,6</span>
-                <div className="flex">
-                  {[1, 2, 3, 4].map((star) => (
-                    <Star
-                      key={star}
-                      className="h-4 w-4 fill-[#FDB022] text-[#FDB022]"
-                    />
-                  ))}
-                  <Star className="h-4 w-4 fill-[#FDB022]/50 text-[#FDB022]" />
-                </div>
-                <span className="text-sm text-[#667085]">(308)</span>
-                <span className="ml-2 rounded bg-[#FEF3F2] px-2 py-0.5 text-xs text-[#B42318]">
-                  Explorer
-                </span>
-              </div>
-
               {/* Label Precio */}
               <div className="mb-2 text-sm text-[#667085]">Preis</div>
 
