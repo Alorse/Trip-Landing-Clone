@@ -22,12 +22,12 @@ export default function Hero() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         {/* Title */}
         <h1 className="mb-4 text-[48px] font-bold leading-tight text-white">
-          Japan Rundreise 2 Wochen
+          Privatreise Japan - 2 Wochen Highlights
         </h1>
 
         {/* Subtitle */}
         <p className="mb-8 text-[20px] font-normal text-white">
-          Japan Rundreise 16 Tage
+          Japanreise vom Reiseprofi mit Team vor Ort zum besten Preis
         </p>
 
         {/* CTA Button */}
@@ -45,12 +45,6 @@ export default function Hero() {
         </button>
 
         {/* Badge */}
-        <div
-          className="rounded px-4 text-[14px] font-medium"
-          style={{ color: "rgba(255, 255, 255, 0.9)" }}
-        >
-          Reise garantiert · keine Mindestteilnehmerzahl
-        </div>
       </div>
 
       {/* Info Bar - Bottom */}
