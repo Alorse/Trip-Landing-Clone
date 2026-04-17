@@ -6,6 +6,7 @@ import { Star } from "lucide-react";
 import OverviewTab from "./tabs/OverviewTab";
 import KarteTab from "./tabs/KarteTab";
 import ReiseleiterTab from "./tabs/ReiseleiterTab";
+// TerminePreiseTab removed to align with navbar
 import InklusiveTab from "./tabs/InklusiveTab";
 import BewertungenTab from "./tabs/BewertungenTab";
 import ReisetagebuchTab from "./tabs/ReisetagebuchTab";
@@ -22,7 +23,7 @@ const tabs: Tab[] = [
   { id: "karte", label: "Karte" },
   { id: "reiseverlauf", label: "Reiseverlauf" },
   { id: "reiseleiter", label: "Reiseleiter" },
-  { id: "termine-preise", label: "Termine & Preise" },
+  // Termine & Preise removed
   { id: "inklusive", label: "Inklusive" },
   { id: "bewertungen", label: "Bewertungen" },
   { id: "reisetagebuch", label: "Reisetagebuch" },
@@ -37,28 +38,9 @@ function Sidebar() {
         <h3 className="mb-3 text-lg font-semibold text-[#344054]">
           Japan Rundreise 2 Wochen: Tradition und Moderne
         </h3>
-        <div className="mb-4 flex items-center gap-2">
-          <span className="text-2xl font-bold text-[#344054]">4,6</span>
-          <div className="flex">
-            {[1, 2, 3, 4].map((star) => (
-              <Star
-                key={star}
-                className="h-4 w-4 fill-[#FDB022] text-[#FDB022]"
-              />
-            ))}
-            <Star className="h-4 w-4 fill-[#FDB022]/50 text-[#FDB022]" />
-          </div>
-          <span className="text-sm text-[#667085]">(308)</span>
-          <span className="ml-2 rounded bg-[#FEF3F2] px-2 py-0.5 text-xs text-[#B42318]">
-            Explorer
-          </span>
-        </div>
         <div className="mb-2 text-sm text-[#667085]">Preis</div>
         <div className="mb-1 text-4xl font-bold text-[#344054]">5.100 EUR</div>
         <div className="mb-6 text-sm text-[#667085]">Flüge inklusive</div>
-        <button className="w-full rounded-lg bg-[#D55753] px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-[#D55753]/90">
-          Reservieren
-        </button>
       </div>
     </div>
   );
@@ -133,11 +115,6 @@ export default function TabsContent() {
             {/* Reiseleiter Section */}
             <section id="reiseleiter">
               <ReiseleiterTab />
-            </section>
-
-            {/* Termine & Preise Section */}
-            <section id="termine-preise">
-              <TerminePreiseTab />
             </section>
 
             {/* Inklusive Section */}
