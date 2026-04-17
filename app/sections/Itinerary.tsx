@@ -311,15 +311,34 @@ const itineraryData: DayItinerary[] = [
   },
 ];
 
+const contentVariants = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut"
+    }
+  },
+  visible: {
+    opacity: 1,
+    height: "auto",
+    transition: {
+      duration: 0.4,
+      ease: "easeOut"
+    }
+  }
+};
+
 function DayContent({ day }: { day: DayItinerary }) {
   return (
     <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "auto" }}
-      exit={{ opacity: 0, height: 0 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      variants={contentVariants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
     >
-      <div className="pl-14">
+      <div className="pl-14 pt-4 pb-6">
         {day.images && <ImageGallery images={day.images} />}
 
         {day.description && (
@@ -370,14 +389,18 @@ export default function Itinerary() {
           <AccordionItem
             key={day.day}
             value={`day-${day.day}`}
-            className="rounded-lg border border-[#E4E7EC] bg-white px-6 transition-all duration-300 data-[state=open]:shadow-md data-[state=open]:border-[#D55753]/30"
+            className="rounded-lg border border-[#E4E7EC] bg-white px-6 overflow-hidden transition-all duration-300 data-[state=open]:shadow-md data-[state=open]:border-[#D55753]/30"
           >
             <AccordionTrigger className="py-4 hover:no-underline group">
               <div className="flex flex-1 items-center justify-between pr-4">
                 <div className="flex items-center gap-4">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#D55753] text-sm font-bold text-white transition-transform duration-300 group-data-[state=open]:scale-110">
+                  <motion.span
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-[#D55753] text-sm font-bold text-white"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     {day.day}
-                  </span>
+                  </motion.span>
                   <div className="text-left">
                     <p className="text-sm font-medium text-[#667085]">
                       Tag {day.day} - {day.route}
@@ -389,8 +412,10 @@ export default function Itinerary() {
                 </div>
               </div>
             </AccordionTrigger>
-            <AccordionContent>
-              <DayContent day={day} />
+            <AccordionContent forceMount>
+              <AnimatePresence mode="wait">
+                <DayContent key={day.day} day={day} />
+              </AnimatePresence>
             </AccordionContent>
           </AccordionItem>
         ))}

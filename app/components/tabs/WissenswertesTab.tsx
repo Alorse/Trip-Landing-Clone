@@ -42,18 +42,24 @@ const faqs: FAQ[] = [
   },
 ];
 
-function FAQContent({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.25, ease: "easeInOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
+const contentVariants = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut"
+    }
+  },
+  visible: {
+    opacity: 1,
+    height: "auto",
+    transition: {
+      duration: 0.4,
+      ease: "easeOut"
+    }
+  }
+};
 
 export default function WissenswertesTab() {
   return (
@@ -68,17 +74,25 @@ export default function WissenswertesTab() {
           <AccordionItem
             key={faq.id}
             value={faq.id}
-            className="rounded-lg border border-[#E4E7EC] bg-white px-6 transition-all duration-300 data-[state=open]:border-[#D55753]/30 data-[state=open]:shadow-md"
+            className="rounded-lg border border-[#E4E7EC] bg-white px-6 overflow-hidden transition-all duration-300 data-[state=open]:border-[#D55753]/30 data-[state=open]:shadow-md"
           >
             <AccordionTrigger className="py-4 text-left hover:no-underline group">
               <span className="text-base font-medium text-[#344054] transition-colors group-data-[state=open]:text-[#D55753]">
                 {faq.question}
               </span>
             </AccordionTrigger>
-            <AccordionContent>
-              <FAQContent>
-                <p className="text-[#667085] pb-4">{faq.answer}</p>
-              </FAQContent>
+            <AccordionContent forceMount>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={faq.id}
+                  variants={contentVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                >
+                  <p className="text-[#667085] pb-4">{faq.answer}</p>
+                </motion.div>
+              </AnimatePresence>
             </AccordionContent>
           </AccordionItem>
         ))}
