@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
 import OverviewTab from "./tabs/OverviewTab";
 import KarteTab from "./tabs/KarteTab";
-import ReiseleiterTab from "./tabs/ReiseleiterTab";
 // TerminePreiseTab removed to align with navbar
 import InklusiveTab from "./tabs/InklusiveTab";
 import BewertungenTab from "./tabs/BewertungenTab";
