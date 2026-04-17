@@ -41,6 +41,19 @@ function Sidebar() {
         <div className="mb-2 text-sm text-[#667085]">Preis</div>
         <div className="mb-1 text-4xl font-bold text-[#344054]">5.100 EUR</div>
         <div className="mb-6 text-sm text-[#667085]">Flüge inklusive</div>
+        {/* Botón restaurado */}
+        <button
+          className="w-full rounded-md px-6 py-3 text-base font-semibold text-white transition-colors"
+          style={{ backgroundColor: "#D55753" }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.backgroundColor = "#C44A46")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.backgroundColor = "#D55753")
+          }
+        >
+          Jetzt Platz sichern
+        </button>
       </div>
     </div>
   );
