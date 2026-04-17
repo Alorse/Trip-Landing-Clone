@@ -13,7 +13,7 @@ const tabs: Tab[] = [
   { id: "karte", label: "Karte" },
   { id: "reiseverlauf", label: "Reiseverlauf" },
   { id: "reiseleiter", label: "Reiseleiter" },
-  { id: "termine-preise", label: "Termine & Preise" },
+  // Termine & Preise removed
   { id: "inklusive", label: "Inklusive" },
   { id: "bewertungen", label: "Bewertungen" },
   { id: "reisetagebuch", label: "Reisetagebuch" },
@@ -26,7 +26,7 @@ interface TabsNavProps {
 }
 
 export function TabsNav({
-  defaultTab = "termine-preise",
+  defaultTab = "ubersicht",
   onTabChange,
 }: TabsNavProps) {
   const [activeTab, setActiveTab] = React.useState(defaultTab);
@@ -47,15 +47,12 @@ export function TabsNav({
               "relative flex-shrink-0 px-6 py-4 text-sm font-medium transition-colors duration-200 focus:outline-none whitespace-nowrap",
               activeTab === tab.id
                 ? "text-[#344054]"
-                : "text-[#667085] hover:text-[#344054]",
+                : "text-[#667085] hover:text-[#344054]"
             )}
           >
             {tab.label}
             {activeTab === tab.id && (
-              <span
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#D55753]"
-                aria-hidden="true"
-              />
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#D55753]" aria-hidden="true" />
             )}
           </button>
         ))}
