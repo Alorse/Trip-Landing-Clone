@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -41,6 +42,19 @@ const faqs: FAQ[] = [
   },
 ];
 
+function FAQContent({ children }: { children: React.ReactNode }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.25, ease: "easeInOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function WissenswertesTab() {
   return (
     <div className="w-full pt-8">
@@ -54,15 +68,17 @@ export default function WissenswertesTab() {
           <AccordionItem
             key={faq.id}
             value={faq.id}
-            className="rounded-lg border border-[#E4E7EC] bg-white px-6"
+            className="rounded-lg border border-[#E4E7EC] bg-white px-6 transition-all duration-300 data-[state=open]:border-[#D55753]/30 data-[state=open]:shadow-md"
           >
-            <AccordionTrigger className="py-4 text-left hover:no-underline">
-              <span className="text-base font-medium text-[#344054]">
+            <AccordionTrigger className="py-4 text-left hover:no-underline group">
+              <span className="text-base font-medium text-[#344054] transition-colors group-data-[state=open]:text-[#D55753]">
                 {faq.question}
               </span>
             </AccordionTrigger>
-            <AccordionContent className="pb-4">
-              <p className="text-[#667085]">{faq.answer}</p>
+            <AccordionContent>
+              <FAQContent>
+                <p className="text-[#667085] pb-4">{faq.answer}</p>
+              </FAQContent>
             </AccordionContent>
           </AccordionItem>
         ))}

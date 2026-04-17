@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -310,6 +311,53 @@ const itineraryData: DayItinerary[] = [
   },
 ];
 
+function DayContent({ day }: { day: DayItinerary }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      exit={{ opacity: 0, height: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      <div className="pl-14">
+        {day.images && <ImageGallery images={day.images} />}
+
+        {day.description && (
+          <p className="mb-4 text-[#344054]">{day.description}</p>
+        )}
+
+        {day.activities && day.activities.length > 0 && (
+          <div className="mb-4">
+            <h4 className="mb-2 text-sm font-semibold text-[#344054]">
+              Aktivitäten:
+            </h4>
+            <ul className="space-y-2">
+              {day.activities.map((activity, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-start gap-2 text-[#667085]"
+                >
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#D55753]"></span>
+                  <span>{activity}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {day.meals && day.meals.length > 0 && (
+          <div>
+            <h4 className="mb-2 text-sm font-semibold text-[#344054]">
+              Verpflegung:
+            </h4>
+            <p className="text-[#667085]">{day.meals.join(", ")}</p>
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Itinerary() {
   return (
     <section className="w-full py-8">
@@ -322,12 +370,12 @@ export default function Itinerary() {
           <AccordionItem
             key={day.day}
             value={`day-${day.day}`}
-            className="rounded-lg border border-[#E4E7EC] bg-white px-6 data-[state=open]:shadow-md"
+            className="rounded-lg border border-[#E4E7EC] bg-white px-6 transition-all duration-300 data-[state=open]:shadow-md data-[state=open]:border-[#D55753]/30"
           >
-            <AccordionTrigger className="py-4 hover:no-underline">
+            <AccordionTrigger className="py-4 hover:no-underline group">
               <div className="flex flex-1 items-center justify-between pr-4">
                 <div className="flex items-center gap-4">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#D55753] text-sm font-bold text-white">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#D55753] text-sm font-bold text-white transition-transform duration-300 group-data-[state=open]:scale-110">
                     {day.day}
                   </span>
                   <div className="text-left">
@@ -341,42 +389,8 @@ export default function Itinerary() {
                 </div>
               </div>
             </AccordionTrigger>
-            <AccordionContent className="pb-6">
-              <div className="pl-14">
-                {day.images && <ImageGallery images={day.images} />}
-
-                {day.description && (
-                  <p className="mb-4 text-[#344054]">{day.description}</p>
-                )}
-
-                {day.activities && day.activities.length > 0 && (
-                  <div className="mb-4">
-                    <h4 className="mb-2 text-sm font-semibold text-[#344054]">
-                      Aktivitäten:
-                    </h4>
-                    <ul className="space-y-2">
-                      {day.activities.map((activity, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2 text-[#667085]"
-                        >
-                          <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#D55753]"></span>
-                          <span>{activity}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {day.meals && day.meals.length > 0 && (
-                  <div>
-                    <h4 className="mb-2 text-sm font-semibold text-[#344054]">
-                      Verpflegung:
-                    </h4>
-                    <p className="text-[#667085]">{day.meals.join(", ")}</p>
-                  </div>
-                )}
-              </div>
+            <AccordionContent>
+              <DayContent day={day} />
             </AccordionContent>
           </AccordionItem>
         ))}
