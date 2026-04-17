@@ -317,7 +317,7 @@ export default function Itinerary() {
         Reiseverlauf
       </h2>
 
-      <Accordion defaultValue={["day-2"]} className="space-y-3">
+      <Accordion defaultValue={["day-3"]} className="space-y-3">
         {itineraryData.map((day) => (
           <AccordionItem
             key={day.day}
@@ -343,7 +343,6 @@ export default function Itinerary() {
             </AccordionTrigger>
             <AccordionContent className="pb-6">
               <div className="pl-14">
-                {/* Galería de imágenes */}
                 {day.images && <ImageGallery images={day.images} />}
 
                 {day.description && (
